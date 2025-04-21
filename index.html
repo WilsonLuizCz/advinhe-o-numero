@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo dos números</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jogo de advinhação</title>
+    <link rel="stylesheet" href="/index.css">
     <script src="/index.js"></script>
 </head>
 <body>
-    
+    <h1 class="titulo">Jogo de advinhação</h1>
+        <h2>Regras do jogo:</h2>
+            <p class="regra">O jogo irá gerar um número aleatório entre 1 e 100, e o jogador terá que adivinhar qual é esse número. O jogo dará dicas ao jogador, dizendo se o número chutado é maior ou menor que o número secreto. O jogo termina quando o jogador acertar o número ou quando ele atingir um número máximo de tentativas.</p>
+
+    <form action="">
+        <label for="palpite"></label>
+        <input id="palpite" name="palpite" type="text">
+        <button id="chutar" name="chutar">Chutar</button>
+    </form>
+
+    <h3>Dica:</h3>
+        <p id="dica"></p>
+        <br>
+
+    <h3>Tentativas:</h3>
+        <p id="tentativa"></p>
 </body>
 </html>
