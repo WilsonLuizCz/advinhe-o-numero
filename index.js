@@ -1,4 +1,41 @@
+let procuraNumero =  0;
+let tentativas = 0;
 
-const randon = (min, max) => Math.floor(Math.random()* (max - min) + min);
+function gerarNumero(){
+    
 
-console.log(randon(1,100))
+    procuraNumero = parseInt(Math.random()*100);
+
+    console.log(procuraNumero)
+
+}
+
+function verificaNumero(){
+
+    let palpite = document.getElementById('palpite').value
+
+    if(palpite > 100 || palpite < 1){
+
+        alert('Palpite Inválido');
+        return;
+
+
+    } 
+
+  if (palpite > procuraNumero){
+
+    tentativas++
+    alert('O número para ser encontrado é MENOR')
+
+} else if (palpite < procuraNumero){
+
+    tentativas++
+    alert('O número para ser encontrado é MAIOR')
+
+} else{
+    alert('Parabéns você acertou! com '+tentativas+' erros.')
+}
+
+}
+
+gerarNumero();
