@@ -10,32 +10,35 @@ function gerarNumero(){
 
 }
 
-function verificaNumero(){
-
-    let palpite = document.getElementById('palpite').value
+function verificaNumero(event){
+event.preventDefault();
+    let palpite = document.getElementById('palpite').value;
 
     if(palpite > 100 || palpite < 1){
 
         alert('Palpite Inválido');
+ 
         return;
-
-
-    } 
+     
+    }
 
   if (palpite > procuraNumero){
 
     tentativas++
-    alert('O número para ser encontrado é MENOR')
+    document.getElementById('dica').innerText = 'O número é MENOR'
 
 } else if (palpite < procuraNumero){
 
     tentativas++
-    alert('O número para ser encontrado é MAIOR')
+    document.getElementById('dica').innerText = 'O número é MAIOR'
 
 } else{
-    alert('Parabéns você acertou! com '+tentativas+' erros.')
+    document.getElementById('tentativa').innerText = tentativas;
 }
 
 }
 
-gerarNumero();
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('formulario').addEventListener('submit', verificaNumero);
+    gerarNumero();
+});
